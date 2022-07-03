@@ -24,7 +24,7 @@ const Campus = db.define("campus", {
   
   imageUrl: {
 	type: Sequelize.STRING,
-	defaultValue: ""
+	defaultValue: "https://static9.depositphotos.com/1658611/1138/i/450/depositphotos_11382349-stock-photo-university-campus.jpg"
 	  
   }
 });
