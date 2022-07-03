@@ -25,6 +25,12 @@ router.get('/:id', ash(async(req, res) => {
   res.status(200).json(campus);
 }));
 
+/* ADD NEW CAMPUS */
+router.post('/', ash(async(req, res, next) => {
+  let createdCampus = await Campus.create(req.body);
+  res.status(200).json(createdCampus);
+}));
+
 /* DELETE CAMPUS */
 router.delete('/:id', ash(async(req, res) => {
   await Campus.destroy({
