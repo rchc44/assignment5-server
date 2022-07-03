@@ -45,15 +45,15 @@ router.post('/', ash(async(req, res, next) => {
 }));
 
 /* DELETE STUDENT */
-router.delete('/:id', function(req, res, next) {
-  Student.destroy({
+router.delete('/:id', ash(async(req, res) => {
+  await Student.destroy({
     where: {
       id: req.params.id
     }
-  })
-    .then(() => res.status(200).json("Deleted a student!"))
-    .catch(err => next(err));
-});
+  });
+  res.status(200).json("Deleted a student!");
+}));
+
 
 /* EDIT STUDENT */
 router.put('/:id', ash(async(req, res) => {
